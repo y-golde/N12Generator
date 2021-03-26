@@ -1,6 +1,14 @@
 <script lang="ts">
-	import getName from './getName';
-	import Headline from './Headline/headline.svelte';
+	import getArticle from './getArticle';
+	import Headline from './Components/Headline/headline.svelte';
+	import RefreshButton from './Components/RefreshButton/refreshButton.svelte';
+
+	let randomArticaleString = getArticle();
+
+	const refreshArticle = () => {
+		randomArticaleString = getArticle();
+	}
+
 </script>
 
 <style>
@@ -19,6 +27,6 @@
 
 <p class='test'>מחולל כתבות צבע לחדשות 12</p>
 
-<Headline name={getName()}/>
-
+<Headline name={randomArticaleString}/>
+<RefreshButton onClick={refreshArticle}></RefreshButton>
 

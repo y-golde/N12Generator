@@ -1,6 +1,6 @@
 import * as WordGroups from './Groups';
 
-const getName = () => {
+const getArticle = () => {
     const rndString = `<strong>${getRandMember(WordGroups.DRAMATIC_TITLES)}:</strong>  
                         ${getRandMember(WordGroups.MEET_CONNECTORS)} 
                         ${getRandMember(WordGroups.GROUPS_OF_PEOPLE)}
@@ -15,4 +15,4 @@ const getRandMember = (group : string[]) => {
     return group[Math.floor(Math.random() * group.length)];
 }
 
-export default getName;
+export default getArticle;

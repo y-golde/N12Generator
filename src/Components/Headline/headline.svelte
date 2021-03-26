@@ -14,6 +14,7 @@
 
     strong {
         font-size: 64px;
+        text-decoration: underline;
     }
 </style>
 
