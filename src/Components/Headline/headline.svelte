@@ -10,6 +10,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        direction: rtl;
     }
 
     strong {
