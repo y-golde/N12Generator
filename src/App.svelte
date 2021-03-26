@@ -4,7 +4,6 @@
 	import RefreshButton from './Components/RefreshButton/refreshButton.svelte';
 
 	let randomArticaleString = getArticle();
-
 	const refreshArticle = () => {
 		randomArticaleString = getArticle();
 	}
