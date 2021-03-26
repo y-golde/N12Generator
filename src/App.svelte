@@ -2,12 +2,21 @@
 	import getRandomFormat from './Formats/formats';
 	import Headline from './Components/Headline/headline.svelte';
 	import RefreshButton from './Components/RefreshButton/refreshButton.svelte';
+	import LoadingMessage from './Components/LoadingMessage/loadingMessage.svelte';
+	import getRandomLoadingMessage from './LoadingMessages/getRandomLoadingMessage';
 	import GitHubReference from './Components/GitHubReference/githubRefernce.svelte';
 
 	let randomArticaleString = getRandomFormat();
+	let randomLoadingMessage = getRandomLoadingMessage();
+	let isLoading = false;
 
 	const refreshArticle = () => {
-		randomArticaleString = getRandomFormat();
+		isLoading = true;
+		randomLoadingMessage = getRandomLoadingMessage()
+		setTimeout( () => {
+			randomArticaleString = getRandomFormat();
+			isLoading = false;
+		} , 750)
 	}
 
 	const MAIN_HEADLINE = 'מחולל כתבות צבע לחדשות 12';
@@ -28,7 +37,12 @@
 
 <div class='main-headline'>{MAIN_HEADLINE}</div>
 
-<Headline name={randomArticaleString}/>
+{#if isLoading}
+	<LoadingMessage message={randomLoadingMessage}/>
+{:else}
+	<Headline name={randomArticaleString}/>
+{/if}
+
 
 <RefreshButton onClick={refreshArticle}></RefreshButton>
 

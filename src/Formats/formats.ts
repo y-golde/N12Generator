@@ -20,7 +20,7 @@ const formats = () => [
         ${getRandMember(WordGroups.CELEBRETY_INTERVIEW_ACTION)}
         ${getRandMember(WordGroups.GROUPS_OF_PEOPLE)} 
         - "${getRandMember(WordGroups.QUOTES)}"
-    `,
+    `
 ]
 
 export const getRandMember = (group : string[]) => {
