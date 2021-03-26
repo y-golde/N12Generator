@@ -1,13 +1,15 @@
 <script lang="ts">
-	import getArticle from './getArticle';
+	import getRandomFormat from './Formats/formats';
 	import Headline from './Components/Headline/headline.svelte';
 	import RefreshButton from './Components/RefreshButton/refreshButton.svelte';
 
-	let randomArticaleString = getArticle();
+	let randomArticaleString = getRandomFormat();
+
 	const refreshArticle = () => {
-		randomArticaleString = getArticle();
+		randomArticaleString = getRandomFormat();
 	}
 
+	const MAIN_HEADLINE = 'מחולל כתבות צבע לחדשות 12';
 </script>
 
 <style>
@@ -24,7 +26,7 @@
 </style>
 
 
-<p class='test'>מחולל כתבות צבע לחדשות 12</p>
+<p class='test'>{MAIN_HEADLINE}</p>
 
 <Headline name={randomArticaleString}/>
 <RefreshButton onClick={refreshArticle}></RefreshButton>
