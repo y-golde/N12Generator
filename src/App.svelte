@@ -19,16 +19,17 @@
 		font-family: 'Secular One', sans-serif;
 	}
 
-	.test {
+	.main-headline {
 		text-align: right;
 		margin-right: 15px;
 		font-size: 32px;
 	}
 </style>
 
-
-<p class='test'>{MAIN_HEADLINE}</p>
+<div class='main-headline'>{MAIN_HEADLINE}</div>
 
 <Headline name={randomArticaleString}/>
+
 <RefreshButton onClick={refreshArticle}></RefreshButton>
+
 <GitHubReference />
