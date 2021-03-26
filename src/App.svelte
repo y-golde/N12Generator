@@ -2,6 +2,7 @@
 	import getRandomFormat from './Formats/formats';
 	import Headline from './Components/Headline/headline.svelte';
 	import RefreshButton from './Components/RefreshButton/refreshButton.svelte';
+	import GitHubReference from './Components/GitHubReference/githubRefernce.svelte';
 
 	let randomArticaleString = getRandomFormat();
 
@@ -30,4 +31,4 @@
 
 <Headline name={randomArticaleString}/>
 <RefreshButton onClick={refreshArticle}></RefreshButton>
-
+<GitHubReference />
